@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For My Love ❤️</title>
+    <style>
+        body {
+            background-color: #ffe6f0;
+            font-family: "Helvetica", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            z-index: 2;
+        }
+
+        h1 {
+            color: #b30059;
+        }
+
+        p {
+            color: #b30059;
+            font-size: 16px;
+            white-space: pre-line;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            background-color: #ff4d88;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff1a66;
+        }
+
+        /* Floating Hearts */
+        .heart {
+            position: absolute;
+            bottom: -20px;
+            font-size: 20px;
+            color: #ff4d88;
+            animation: floatUp linear forwards;
+            opacity: 0.8;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-100vh) scale(1.8);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>For My Love ❤️</h1>
+    <p>
+Devaaaaaa❤,
+
+Every moment with you is my favorite.
+You are my heart, my peace,
+and my forever.
+
+I love you more every day ❤️
+    </p>
+
+    <button onclick="showLove()">Click for a Surprise 💕</button>
+</div>
+
+<script>
+    function showLove() {
+        alert("💘 A Little Secret 💘\n\nYou are the best thing that ever happened to me.\n\nForever yours ❤️");
+    }
+
+    // Create floating hearts
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤";
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+        heart.style.fontSize = (14 + Math.random() * 20) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 8000);
+    }
+
+    setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
