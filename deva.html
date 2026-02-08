@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You 🤍</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.9);
+        padding: 25px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.1em;
+        min-height: 70px;
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 25px;
+        background: #ff8fab;
+        color: white;
+        font-size: 1em;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #ff6f91;
+    }
+
+    .heart {
+        font-size: 2em;
+        animation: pulse 2s infinite;
+        margin-top: 15px;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+
+    .breathing {
+        margin-top: 15px;
+        font-size: 0.9em;
+        opacity: 0.8;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>You are safe here 🤍</h1>
+    <p id="message">Tap the button whenever you need me.</p>
+
+    <button onclick="newMessage()">Tap for comfort</button>
+
+    <div class="heart">🤍</div>
+
+    <div class="breathing" id="breath">Inhale…</div>
+</div>
+
+<script>
+const messages = [
+    "I will be on your side always",
+    "I'll be there for you in all situations ❤️",
+    "I will take care of u in future",
+    "Don't worry i know about you and I'm proud of you",
+    "Pls azhadha Chellam i love you forever❤️"
+];
+
+function newMessage() {
+    const msg = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById("message").innerText = msg;
+}
+
+// breathing text loop
+let breathText = ["Inhale…", "Hold…", "Exhale…"];
+let index = 0;
+
+setInterval(() => {
+    document.getElementById("breath").innerText = breathText[index];
+    index = (index + 1) % breathText.length;
+}, 3000);
+</script>
+
+</body>
+</html>
